@@ -18,15 +18,4 @@ public class UsuarioService {
     public Usuario salvar(Usuario usuario) {
         return usuarioRepository.save(usuario);
     }
-
-    public Usuario buscarPorId(Long id) {
-
-        /* Foi usado um método que já existia dentro do spring (findById)
-           junto com ele, usamos o metodo 'orElseThrow' que retorna um usuario
-           ou lança uma exceção.
-        * */
-        return usuarioRepository.findById(id).orElseThrow(
-                () -> new RuntimeException("Usuário não encontrado")
-        );
-    }
 }
