@@ -2,9 +2,12 @@ package com.mballen.demoparkapi.service;
 
 import com.mballen.demoparkapi.entity.Usuario;
 import com.mballen.demoparkapi.repository.UsuarioRepository;
-import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
+import java.util.List;
 
 @RequiredArgsConstructor
 @Service
@@ -13,20 +16,28 @@ public class UsuarioService {
     private final UsuarioRepository usuarioRepository;
 
     @Transactional
-    /* Spring vai tomar conta da parte referente a transação. É ele que vai cuidar do recurso
-    para abrir, gerenciar e fechar a transação do método 'save'*/
     public Usuario salvar(Usuario usuario) {
         return usuarioRepository.save(usuario);
     }
 
+    @Transactional(readOnly = true)
     public Usuario buscarPorId(Long id) {
-
-        /* Foi usado um método que já existia dentro do spring (findById)
-           junto com ele, usamos o metodo 'orElseThrow' que retorna um usuario
-           ou lança uma exceção.
-        * */
         return usuarioRepository.findById(id).orElseThrow(
                 () -> new RuntimeException("Usuário não encontrado")
+
         );
+    }
+
+    @Transactional
+    public Usuario editarSenha(Long id, String password) {
+        Usuario user = buscarPorId(id);
+        user.setPassword(password);
+        return user;
+    }
+
+    @Transactional(readOnly = true)
+    public List<Usuario> buscarTodos() {
+        return usuarioRepository.findAll();
+
     }
 }

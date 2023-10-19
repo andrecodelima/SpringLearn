@@ -1,6 +1,7 @@
 package com.mballen.demoparkapi.web.controller;
 
 import com.mballen.demoparkapi.entity.Usuario;
+import com.mballen.demoparkapi.entity.UsuarioVerbose;
 import com.mballen.demoparkapi.service.UsuarioService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
@@ -30,13 +31,25 @@ public class UsuarioControllerVerbose {
         Junto com o objeto, o ResponseEntity guarda outras informações como por exemplo o código
         de resposta e o cabeçalho.
     */
-
     @PostMapping
-    public ResponseEntity<Usuario> create (Usuario usuario){
-        Usuario user = usuarioService.salvar(usuario);
+    public ResponseEntity<UsuarioVerbose> create (UsuarioVerbose usuario){
+        UsuarioVerbose user = usuarioService.salvar(UsuarioVerbose);
 
         // Retornando uma resposta ao cliente
         return ResponseEntity.status(HttpStatus.CREATED).body(user);
 
     }
+
+    @GetMapping("/{id}") // Para recuperar um valor
+    /*Id vai ser enviado como um parametro, mas como um parametro de caminho (Path Paramt)
+     * {} o par de chaves indica que há um valor que será enviado aqui.
+     * @PathVariable - Pega esse valor e adiciona ele numa variavel do tipo Long
+     * */
+
+    public ResponseEntity<UsuarioVerbose> getById(@PathVariable Long id) {
+        UsuarioVerbose user = usuarioService.buscarPorId(id);
+        return ResponseEntity.status(HttpStatus.CREATED).body(user);
+    }
+
+
 }
