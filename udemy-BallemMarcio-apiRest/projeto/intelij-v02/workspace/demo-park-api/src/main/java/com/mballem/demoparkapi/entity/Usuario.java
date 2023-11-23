@@ -6,11 +6,15 @@ import java.time.LocalDateTime;
 import java.util.Objects;
 
 import jakarta.persistence.*;
+<<<<<<< HEAD
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Getter @Setter @NoArgsConstructor
+=======
+
+>>>>>>> 7e3761687b2b9eefe8487a6b1ba97460f1cb9813
 @Entity
 @Table(name = "usuarios")
 public class Usuario implements Serializable {
@@ -26,7 +30,10 @@ public class Usuario implements Serializable {
     @Column(name = "password", nullable = false, length = 200)
     private String password;
 
+<<<<<<< HEAD
     @Enumerated(EnumType.STRING)
+=======
+>>>>>>> 7e3761687b2b9eefe8487a6b1ba97460f1cb9813
     @Column(name = "role", nullable = false, length = 25)
     private Role role;
 
@@ -65,6 +72,9 @@ public class Usuario implements Serializable {
                 "id=" + id +
                 '}';
     }
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> 7e3761687b2b9eefe8487a6b1ba97460f1cb9813
 }
