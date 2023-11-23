@@ -1,13 +1,14 @@
-package com.mballen.demoparkapi.entity;
+package com.mballem.demoparkapi.entity;
+
+
+import java.io.Serializable;
+import java.time.LocalDateTime;
+import java.util.Objects;
 
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-
-import java.io.Serializable;
-import java.time.LocalDateTime;
-import java.util.Objects;
 
 @Getter @Setter @NoArgsConstructor
 @Entity
@@ -15,11 +16,11 @@ import java.util.Objects;
 public class Usuario implements Serializable {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id")
     private Long id;
 
-    @Column(name="username", nullable = false, unique = true, length = 100)
+    @Column(name = "username", nullable = false, unique = true, length = 100)
     private String username;
 
     @Column(name = "password", nullable = false, length = 200)
@@ -38,9 +39,8 @@ public class Usuario implements Serializable {
     @Column(name = "criado_por")
     private String criadoPor;
 
-    @Column(name = "modificado_por")
+    @Column(name = "modificado_Por")
     private String modificadoPor;
-
 
     public enum Role{
         ROLE_ADMIN, ROLE_CLIENTE
@@ -65,8 +65,6 @@ public class Usuario implements Serializable {
                 "id=" + id +
                 '}';
     }
-
-
 
 
 }

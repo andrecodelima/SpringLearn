@@ -1,8 +1,7 @@
-package com.mballen.demoparkapi.repository;
+package com.mballem.demoparkapi.repository;
 
-import com.mballen.demoparkapi.entity.Usuario;
+import com.mballem.demoparkapi.entity.Usuario;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface UsuarioRepository extends JpaRepository<Usuario, Long> {
-
 }
