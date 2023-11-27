@@ -7,7 +7,6 @@ import java.time.LocalDateTime;
 import java.util.Objects;
 
 /*VERSÃO VERBOSA, ALTAMENTE COMENTADA PRA FINS DIDÁTICOS E SEM O LONBOK
-
 Fazendo o mapeamento da Entidade usuarios. (Mapeamento para o banco de dados)*/
 @Entity
 @Table(name = "usuarios")
