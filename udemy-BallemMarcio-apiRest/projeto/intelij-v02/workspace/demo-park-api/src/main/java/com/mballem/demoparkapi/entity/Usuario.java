@@ -6,7 +6,13 @@ import java.time.LocalDateTime;
 import java.util.Objects;
 
 import jakarta.persistence.*;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
+@Getter
+@Setter
+@NoArgsConstructor
 @Entity
 @Table(name = "usuarios")
 public class Usuario implements Serializable {
@@ -22,8 +28,9 @@ public class Usuario implements Serializable {
     @Column(name = "password", nullable = false, length = 200)
     private String password;
 
+    @Enumerated(EnumType.STRING)
     @Column(name = "role", nullable = false, length = 25)
-    private Role role;
+    private Role role = Role.ROLE_CLIENTE;
 
     @Column(name = "data_criacao")
     private LocalDateTime dataCriacao;
@@ -60,4 +67,6 @@ public class Usuario implements Serializable {
                 "id=" + id +
                 '}';
     }
+
+
 }

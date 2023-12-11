@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="f3642d58-7c0b-42c5-8254-5a1304bb20e9" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../../exercicios/tarefas-04/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../exercicios/tarefas-04/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../exercicios/tarefas-04/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../exercicios/tarefas-04/.idea/jarRepositories.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../exercicios/tarefas-04/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../exercicios/tarefas-04/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../exercicios/tarefas-04/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../intelij-v02/workspace/demo-park-api/src/main/java/com/mballem/demoparkapi/repository/UsuarioRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../intelij-v02/workspace/demo-park-api/src/main/java/com/mballem/demoparkapi/service/UsuarioService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../intelij-v02/workspace/demo-park-api/src/main/java/com/mballem/demoparkapi/web/controller/UsurioController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../intelij - verboso/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../intelij - verboso/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../intelij-v02/documents2/RequisitoseConfiguracoes/Timezones.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../intelij-v02/documents2/RequisitoseConfiguracoes/jpa-datasource-properties.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../intelij-v02/documents2/RequisitoseConfiguracoes/locale-props.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../intelij-v02/documents2/demanda-v1.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../intelij-v02/workspace/demo-park-api/src/main/java/com/mballem/demoparkapi/entity/Usuario.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../intelij-v02/workspace/demo-park-api/src/main/java/com/mballem/demoparkapi/entity/Usuario.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/jarRepositories.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/tarefas-04.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/base-v1.0.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tarefas/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tarefas/.mvn/wrapper/maven-wrapper.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tarefas/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tarefas/mvnw" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tarefas/mvnw.cmd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tarefas/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tarefas/src/main/java/com/mballem/tarefas/TarefasApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tarefas/src/main/java/com/mballem/tarefas/web/controller/ContatoController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tarefas/src/main/resources/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tarefas/src/main/resources/lib/module-entity-v1.0.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tarefas/src/main/resources/lib/module-repository-v1.0.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tarefas/src/main/resources/lib/module-service-v1.0.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tarefas/src/test/java/com/mballem/tarefas/TarefasApplicationTests.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../workspace/demo-park-api.zip" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../workspace/demo-park-api/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../workspace/demo-park-api/.mvn/wrapper/maven-wrapper.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../workspace/demo-park-api/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../workspace/demo-park-api/mvnw" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../workspace/demo-park-api/mvnw.cmd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../workspace/demo-park-api/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../workspace/demo-park-api/src/main/java/com/mballen/demoparkapi/DemoParkApiApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../workspace/demo-park-api/src/main/java/com/mballen/demoparkapi/config/SpringTimeZoneConfig.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../workspace/demo-park-api/src/main/java/com/mballen/demoparkapi/entity/Usuario.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../workspace/demo-park-api/src/main/java/com/mballen/demoparkapi/repository/UsuarioRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../workspace/demo-park-api/src/main/java/com/mballen/demoparkapi/service/UsuarioService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../workspace/demo-park-api/src/main/java/com/mballen/demoparkapi/web/controller/UsuarioController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../workspace/demo-park-api/src/main/java/entity/Usuario.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../workspace/demo-park-api/src/main/java/entity/UsuarioVerboso.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../workspace/demo-park-api/src/main/resources/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../workspace/demo-park-api/src/test/java/com/mballen/demoparkapi/DemoParkApiApplicationTests.java" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../../.." />
+  </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "customColor": "",
+  "associatedIndex": 1
+}]]></component>
+  <component name="ProjectId" id="2Ylfu8T1OcwC3J02zdkfKwNX9uX" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true"
+  }
+}]]></component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="f3642d58-7c0b-42c5-8254-5a1304bb20e9" name="Changes" comment="" />
+      <created>1701105307686</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1701105307686</updated>
+    </task>
+    <servers />
+  </component>
+</project>
