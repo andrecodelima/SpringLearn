@@ -14,11 +14,12 @@ import lombok.*;
 public class UsuarioCreateDTO {
 
     @NotBlank
-    @Size(min = 6, max = 6)
     @Email(message = "Formato do e-mail está inválido", regexp = "^[a-z0-9.+-]+@[a-z0-9.-]+\\.[a-z]{2,}$")
     //tratando formato do email por email de expressão regular - regexp
     private String username;
 
+    @NotBlank
+    @Size(min = 6, max = 6)
     private String password;
 }
 

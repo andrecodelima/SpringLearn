@@ -1,2 +1,60 @@
-package com.mballem.demoparkapi.web.dto.exception;public class ErrorMessage {
+package com.mballem.demoparkapi.web.dto.exception;
+
+import jakarta.servlet.http.HttpServletRequest;
+import lombok.Getter;
+import lombok.ToString;
+import org.springframework.http.HttpStatus;
+import org.springframework.validation.BindingResult;
+import org.springframework.validation.FieldError;
+
+import java.util.HashMap;
+import java.util.Map;
+
+@Getter
+@ToString
+public class ErrorMessage {
+
+    /*Tratamento de exceções*/
+
+    private String path; //Path/Recurso que gerou a exceção
+
+    private String method; // Método enviado que gerou a exceção
+
+    private int status; // Status da exceção
+
+    private String statusText;
+
+    private String message; // Descrição da causa do erro
+
+    private Map<String, String> errors;
+
+    public ErrorMessage() {
+    }
+
+    public ErrorMessage(HttpServletRequest request, HttpStatus status, String message){
+
+        this.path = request.getRequestURI();
+        this.method = request.getMethod();
+        this.status = status.value();
+        this.statusText = status.getReasonPhrase();
+        this.message = message;
+    }
+
+    public ErrorMessage(HttpServletRequest request, HttpStatus status, String message, BindingResult result){
+
+        this.path = request.getRequestURI();
+        this.method = request.getMethod();
+        this.status = status.value();
+        this.statusText = status.getReasonPhrase();
+        this.message = message;
+        addErrors(result);
+    }
+
+    private void addErrors(BindingResult result){
+        this.errors = new HashMap<>();
+        for(FieldError fieldError : result.getFieldErrors()){
+            this.errors.put(fieldError.getField(), fieldError.getDefaultMessage());
+        }
+    }
+
 }
