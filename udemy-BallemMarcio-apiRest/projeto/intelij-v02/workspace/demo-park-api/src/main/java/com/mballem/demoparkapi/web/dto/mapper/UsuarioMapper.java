@@ -28,5 +28,12 @@ public class UsuarioMapper {
         return mapper.map(usuario, UsuarioResponseDTO.class);
     }
 
+<<<<<<< HEAD
+    public static List<UsuarioResponseDTO> toListDTO(List<Usuario> usuarios){
+        return usuarios.stream().map(user -> toDto(user)).collect(Collectors.toList());
+    }
+
+=======
+>>>>>>> 3bcf8bd001d2fb44e4b3d3e67be2aa44c3aa0d7c
 
 }
