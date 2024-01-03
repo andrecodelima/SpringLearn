@@ -1,6 +1,7 @@
 package com.mballem.demoparkapi.service;
 
 import com.mballem.demoparkapi.entity.Usuario;
+import com.mballem.demoparkapi.exception.UsernameUniqueViolationException;
 import com.mballem.demoparkapi.repository.UsuarioRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -16,17 +17,23 @@ public class UsuarioService {
 
     @Transactional
     public Usuario salvar(Usuario usuario) {
-        return usuarioRepository.save(usuario);
+        try {
+            return usuarioRepository.save(usuario);
+        } catch (org.springframework.dao.DataIntegrityViolationException ex){
+            throw new UsernameUniqueViolationException(String.format("Username {%s} já cadastrado", usuario.getUsername()));
+        }
+
     }
 
     @Transactional(readOnly = true)
-    public Usuario buscarPorId(Long id){
+    public Usuario buscarPorId(Long id) {
         return usuarioRepository.findById(id).orElseThrow(
                 () -> new RuntimeException("Usuário não encontrado.")
         );
     }
 
     @Transactional
+<<<<<<< HEAD
 <<<<<<< HEAD
     public Usuario editarSenha(Long id, String senhaAtual, String novaSenha, String confirmaSenha) {
 
@@ -45,6 +52,19 @@ public class UsuarioService {
         Usuario user = buscarPorId(id);
         user.setPassword(password);
 >>>>>>> 3bcf8bd001d2fb44e4b3d3e67be2aa44c3aa0d7c
+=======
+    public Usuario editarSenha(Long id, String senhaAtual, String novaSenha, String confirmaSenha) {
+        if (!novaSenha.equals(confirmaSenha)) {
+            throw new RuntimeException("Nova senha não confere com confirmação de senha.");
+        }
+
+        Usuario user = buscarPorId(id);
+        if (!user.getPassword().equals(senhaAtual)) {
+            throw new RuntimeException("Sua senha não confere.");
+        }
+
+        user.setPassword(novaSenha);
+>>>>>>> 5994e040a1a3a780c6c8cc943670b2a6bb1c5e06
         return user;
     }
 

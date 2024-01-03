@@ -29,11 +29,19 @@ public class UsuarioMapper {
     }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     public static List<UsuarioResponseDTO> toListDTO(List<Usuario> usuarios){
         return usuarios.stream().map(user -> toDto(user)).collect(Collectors.toList());
     }
 
 =======
 >>>>>>> 3bcf8bd001d2fb44e4b3d3e67be2aa44c3aa0d7c
+=======
+     public static List<UsuarioResponseDTO> toListDTO(List<Usuario> usuarios){
+        return usuarios.stream().map(user -> toDto(user)).collect(Collectors.toList());
+    }
+
+
+>>>>>>> 5994e040a1a3a780c6c8cc943670b2a6bb1c5e06
 
 }
