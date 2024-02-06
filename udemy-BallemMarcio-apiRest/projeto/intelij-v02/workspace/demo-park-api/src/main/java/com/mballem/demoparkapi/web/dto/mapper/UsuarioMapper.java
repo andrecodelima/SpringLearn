@@ -1,8 +1,8 @@
 package com.mballem.demoparkapi.web.dto.mapper;
 
 import com.mballem.demoparkapi.entity.Usuario;
-import com.mballem.demoparkapi.web.dto.UsuarioCreateDTO;
-import com.mballem.demoparkapi.web.dto.UsuarioResponseDTO;
+import com.mballem.demoparkapi.web.dto.UsuarioCreateDto;
+import com.mballem.demoparkapi.web.dto.UsuarioResponseDto;
 import org.modelmapper.ModelMapper;
 import org.modelmapper.PropertyMap;
 
@@ -11,13 +11,13 @@ import java.util.stream.Collectors;
 
 public class UsuarioMapper {
 
-    public static Usuario toUsuario(UsuarioCreateDTO createDto) {
+    public static Usuario toUsuario(UsuarioCreateDto createDto) {
         return new ModelMapper().map(createDto, Usuario.class);
     }
 
-    public static UsuarioResponseDTO toDto(Usuario usuario) {
+    public static UsuarioResponseDto toDto(Usuario usuario) {
         String role = usuario.getRole().name().substring("ROLE_".length());
-        PropertyMap<Usuario, UsuarioResponseDTO> props = new PropertyMap<Usuario, UsuarioResponseDTO>() {
+        PropertyMap<Usuario, UsuarioResponseDto> props = new PropertyMap<Usuario, UsuarioResponseDto>() {
             @Override
             protected void configure() {
                 map().setRole(role);
@@ -25,23 +25,10 @@ public class UsuarioMapper {
         };
         ModelMapper mapper = new ModelMapper();
         mapper.addMappings(props);
-        return mapper.map(usuario, UsuarioResponseDTO.class);
+        return mapper.map(usuario, UsuarioResponseDto.class);
     }
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-    public static List<UsuarioResponseDTO> toListDTO(List<Usuario> usuarios){
+    public static List<UsuarioResponseDto> toListDto(List<Usuario> usuarios) {
         return usuarios.stream().map(user -> toDto(user)).collect(Collectors.toList());
     }
-
-=======
->>>>>>> 3bcf8bd001d2fb44e4b3d3e67be2aa44c3aa0d7c
-=======
-     public static List<UsuarioResponseDTO> toListDTO(List<Usuario> usuarios){
-        return usuarios.stream().map(user -> toDto(user)).collect(Collectors.toList());
-    }
-
-
->>>>>>> 5994e040a1a3a780c6c8cc943670b2a6bb1c5e06
-
 }

@@ -1,5 +1,6 @@
-package com.mballem.demoparkapi.web.dto.exception;
+package com.mballem.demoparkapi.web.exception;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
 import jakarta.servlet.http.HttpServletRequest;
 import lombok.Getter;
 import lombok.ToString;
@@ -14,25 +15,18 @@ import java.util.Map;
 @ToString
 public class ErrorMessage {
 
-    /*Tratamento de exceções*/
-
-    private String path; //Path/Recurso que gerou a exceção
-
-    private String method; // Método enviado que gerou a exceção
-
-    private int status; // Status da exceção
-
+    private String path;
+    private String method;
+    private int status;
     private String statusText;
-
-    private String message; // Descrição da causa do erro
-
+    private String message;
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     private Map<String, String> errors;
 
     public ErrorMessage() {
     }
 
-    public ErrorMessage(HttpServletRequest request, HttpStatus status, String message){
-
+    public ErrorMessage(HttpServletRequest request, HttpStatus status, String message) {
         this.path = request.getRequestURI();
         this.method = request.getMethod();
         this.status = status.value();
@@ -40,8 +34,7 @@ public class ErrorMessage {
         this.message = message;
     }
 
-    public ErrorMessage(HttpServletRequest request, HttpStatus status, String message, BindingResult result){
-
+    public ErrorMessage(HttpServletRequest request, HttpStatus status, String message, BindingResult result) {
         this.path = request.getRequestURI();
         this.method = request.getMethod();
         this.status = status.value();
@@ -50,9 +43,9 @@ public class ErrorMessage {
         addErrors(result);
     }
 
-    private void addErrors(BindingResult result){
+    private void addErrors(BindingResult result) {
         this.errors = new HashMap<>();
-        for(FieldError fieldError : result.getFieldErrors()){
+        for (FieldError fieldError : result.getFieldErrors()) {
             this.errors.put(fieldError.getField(), fieldError.getDefaultMessage());
         }
     }

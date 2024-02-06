@@ -5,14 +5,11 @@ import org.springframework.context.annotation.Configuration;
 
 import java.util.TimeZone;
 
-
 @Configuration
-public class SpringTimeZoneConfig {
-//Classe de configuração, por isso a anotação 'configuration'
+public class SpringTimezoneConfig {
 
-    //Metodo para definir o TimeZone
     @PostConstruct
-    public void timezoneConfig(){
+    public void timezoneConfig() {
         TimeZone.setDefault(TimeZone.getTimeZone("America/Sao_Paulo"));
     }
 }
