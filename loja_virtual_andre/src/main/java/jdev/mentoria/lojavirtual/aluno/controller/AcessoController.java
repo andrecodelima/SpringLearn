@@ -29,6 +29,8 @@ public class AcessoController {
 	@Autowired
 	private AcessoRepository acessoRepository;
 	
+	
+	// INSERT
 	@ResponseBody /*Poder dar um retorno da API*/
 	@PostMapping(value = "**/salvarAcesso") /*Mapeando a url para receber JSON*/
 	public ResponseEntity<Acesso> salvarAcesso(@RequestBody Acesso acesso) { /*Recebe o JSON e converte pra Objeto*/
@@ -38,8 +40,7 @@ public class AcessoController {
 		return new ResponseEntity<Acesso>(acessoSalvo, HttpStatus.OK);
 	}
 	
-	
-	
+	// DELETE
 	@ResponseBody /*Poder dar um retorno da API*/
 	@PostMapping(value = "**/deleteAcesso") /*Mapeando a url para receber JSON*/
 	public ResponseEntity<?> deleteAcesso(@RequestBody Acesso acesso) { /*Recebe o JSON e converte pra Objeto*/
@@ -50,6 +51,7 @@ public class AcessoController {
 	}
 	
 
+	// DELETE POR ID
 	//@Secured({ "ROLE_GERENTE", "ROLE_ADMIN" })
 	@ResponseBody
 	@DeleteMapping(value = "**/deleteAcessoPorId/{id}")
@@ -60,8 +62,7 @@ public class AcessoController {
 		return new ResponseEntity("Acesso Removido",HttpStatus.OK);
 	}
 	
-	
-	
+	// GET BY ID
 	@ResponseBody
 	@GetMapping(value = "**/obterAcesso/{id}")
 	public ResponseEntity<Acesso> obterAcesso(@PathVariable("id") Long id) { 
@@ -71,7 +72,7 @@ public class AcessoController {
 		return new ResponseEntity<Acesso>(acesso,HttpStatus.OK);
 	}
 	
-	
+	//
 	@ResponseBody
 	@GetMapping(value = "**/buscarPorDesc/{desc}")
 	public ResponseEntity<List<Acesso>> buscarPorDesc(@PathVariable("desc") String desc) { 

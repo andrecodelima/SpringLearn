@@ -56,9 +56,7 @@ public class WebConfigSecurity extends WebSecurityConfigurerAdapter implements H
 	protected void configure(AuthenticationManagerBuilder auth) throws Exception {
 		auth.userDetailsService(implementacaoUserDetailsService).passwordEncoder(new BCryptPasswordEncoder());
 		
-	}
-	
-	
+	}	
 
 	/*Ignora alguas URL livre de autenticação*/
 	@Override
