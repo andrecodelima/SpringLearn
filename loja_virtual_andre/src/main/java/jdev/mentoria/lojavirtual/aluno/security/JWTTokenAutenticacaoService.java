@@ -1,5 +1,6 @@
 package jdev.mentoria.lojavirtual.aluno.security;
 
+import java.io.IOException;
 import java.util.Date;
 
 import javax.servlet.http.HttpServletRequest;
@@ -10,8 +11,10 @@ import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
+import io.jsonwebtoken.ExpiredJwtException;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
+import io.jsonwebtoken.SignatureException;
 import jdev.mentoria.lojavirtual.aluno.ApplicationContextLoad;
 import jdev.mentoria.lojavirtual.aluno.model.Usuario;
 import jdev.mentoria.lojavirtual.aluno.repository.UsuarioRepository;
@@ -58,40 +61,49 @@ public class JWTTokenAutenticacaoService {
 	
 	
 	/*Retorna o usuário validado com token ou caso nao seja valido retona null*/
-	public Authentication getAuthetication(HttpServletRequest request, HttpServletResponse response) {
+	public Authentication getAuthetication(HttpServletRequest request, HttpServletResponse response)throws IOException {
 		
 		String token = request.getHeader(HEADER_STRING);
 		
-		if (token != null) {
-			
-			String tokenLimpo = token.replace(TOKEN_PREFIX, "").trim();
-			
-			/*Faz a validacao do token do usuário na requisicao e obtem o USER*/
-			String user = Jwts.parser().
-					setSigningKey(SECRET)
-					.parseClaimsJws(tokenLimpo)
-					.getBody().getSubject(); /*ADMIN ou Alex*/
-			
-			if (user != null) {
-				
-				Usuario usuario = ApplicationContextLoad.
-						getApplicationContext().
-						getBean(UsuarioRepository.class).findUserByLogin(user);
-				
-				if (usuario != null) {
-					return new UsernamePasswordAuthenticationToken(
-							usuario.getLogin(),
-							usuario.getSenha(), 
-							usuario.getAuthorities());
+		 try {
+			 if (token != null) {
+					
+					String tokenLimpo = token.replace(TOKEN_PREFIX, "").trim();
+					
+					/*Faz a validacao do token do usuário na requisicao e obtem o USER*/
+					String user = Jwts.parser().
+							setSigningKey(SECRET)
+							.parseClaimsJws(tokenLimpo)
+							.getBody().getSubject(); /*ADMIN ou Alex*/
+					
+					if (user != null) {
+						
+						Usuario usuario = ApplicationContextLoad.
+								getApplicationContext().
+								getBean(UsuarioRepository.class).findUserByLogin(user);
+						
+						if (usuario != null) {
+							return new UsernamePasswordAuthenticationToken(
+									usuario.getLogin(),
+									usuario.getSenha(), 
+									usuario.getAuthorities());
+						}
+						
+					}
+					
 				}
-				
-			}
-			
-		}
+		 }catch (SignatureException e) {
+				response.getWriter().write("Token está inválido.");
 		
-		liberacaoCors(response);
-		return null;
+		 }catch (ExpiredJwtException e) {
+			response.getWriter().write("Token está expirado, efetue o login novamente.");
+		}
+		 finally {
+			 liberacaoCors(response);
+		 }
+		 return null;
 	}
+	 
 	
 	
 	/*Fazendo liberação contra erro de COrs no navegador*/
